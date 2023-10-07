@@ -10,4 +10,7 @@ Type main.js in command prompt
 # To Run Word File
 Type word.js in command prompt
 
+# To Run Pdf File
+Type pdf.js in command prompt
+
 
