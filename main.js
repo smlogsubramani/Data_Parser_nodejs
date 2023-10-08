@@ -1,17 +1,13 @@
-// CSV FILE EXTRACTOR TEST.
+const express = require('express');
+const app =  express();
+const fileroute  = require('./src/routes');
 
-const csv = require('csv-parser')
-const fs = require('fs')
+app.use('/',fileroute);
+app.use(express.json());
 
-const results = [];
-
-fs.createReadStream('Data.csv')
-.pipe(csv({}))
-.on('data' , (data) => results.push(data))
-.on('end',()=>{
-    console.log(results);
-})
-
+app.listen('3000',()=>{
+    console.log('server running on port 3000');
+});
 
 
 
