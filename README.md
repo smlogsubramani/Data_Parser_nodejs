@@ -1,16 +1,11 @@
 # Data_Parser_nodejs
 This is project where the data from the excel file , word , csv can be extracted in the console.
 
-# To Run excel File
-Type node excel.js in command prompt
+# To Run Node File Continously 
+Run 'nodemon main.js'
 
-# To Run csv file
-Type main.js in command prompt
+# ABOUT
+In the initial page on the '/' route you will be displayed with the test routes .
 
-# To Run Word File
-Type word.js in command prompt
-
-# To Run Pdf File
-Type pdf.js in command prompt
 
 
