@@ -16,7 +16,7 @@ var workbook = XLSX.readFile('test.xlsx');
 
 const getintialdata = (req, res) => {
     const responseText = `
-        <p>WELCOME TO THE DATA EXTRACTOR</p>
+        <h1>WELCOME TO THE DATA EXTRACTOR</h1>
         <p>To extract the word file, give /getword</p>
         <p>To extract the excel file, give /getexcel</p>
         <p>To get the CSV file, give /getcsv</p>
@@ -32,9 +32,14 @@ const getcsv = (req,res) =>{
     .pipe(csv({}))
     .on('data' , (data) => results.push(data))
     .on('end',()=>{
-        res.status(200).send(results);
+        const jsondata = JSON.stringify(results);
+        res.status(200).send(jsondata);
         console.log("csv data sent successfully");
     })
+    .on('error', (error) => {
+        console.error('Error reading CSV:', error);
+        res.status(500).send('Error reading CSV');
+      });  
 }
 
 const getpdf = (req, res) => {
@@ -44,10 +49,14 @@ const getpdf = (req, res) => {
             numpages: data.numpages,
             text: data.text
         };
-
-        res.status(200).send(responseData);
+        const jsondata = JSON.stringify(responseData);
+        res.status(200).send(jsondata);
         console.log("pdf data sent successfully");
     })
+    .then('error', (error) => {
+        console.error('Error reading pdf:', error);
+        res.status(500).send('Error reading pdf');
+    });
 }
 
 
@@ -58,17 +67,28 @@ const getword = (req,res) =>{
         const getword = {
             word : doc.getBody()
         }
-        res.status(200).send(getword);
+        const jsondata = JSON.stringify(getword)
+        res.status(200).send(jsondata);
         console.log("word data sent successfully");
+    })
+    .then('error', (error) => {
+        console.error('Error reading word:', error);
+        res.status(500).send('Error reading word');
     });
 }
 
 const getexcel = (req,res) =>{
-
+    try{
     var worksheet = workbook.Sheets[workbook.SheetNames[0]];
     var data = XLSX.utils.sheet_to_json(worksheet);
-    res.status(200).send(data);
+    const jsondata = JSON.stringify(data)
+    res.status(200).send(jsondata);
     console.log("excel data sent successfully");
+    }
+    catch(error){
+        console.log("The error is : ",error);
+        res.status(500).send("Error reading the excel file");
+    }
 }
 
 
