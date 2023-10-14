@@ -26,7 +26,7 @@ const Homepage = () => {
         <FontAwesomeIcon  icon={faFileWord} className="pdf-icon2 animated-icon" />
         <FontAwesomeIcon  icon={faFileExcel} className="pdf-icon3 animated-icon" />
 
-          <div className="row">
+        <div className="row">
             <h2 className='homepage-head'>
                 Data Emersion
             </h2>

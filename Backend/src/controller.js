@@ -13,6 +13,8 @@ const extracted = extractor.extract("Resume.docx");
 var XLSX = require("xlsx");
 var workbook = XLSX.readFile('test.xlsx');
 
+const sizeOf = require('image-size');
+
 
 const getintialdata = (req, res) => {
     const responseText = `
@@ -21,8 +23,10 @@ const getintialdata = (req, res) => {
         <p>To extract the excel file, give /getexcel</p>
         <p>To get the CSV file, give /getcsv</p>
         <p>To get the PDF file, give /getpdf</p>
+        <p>To get the Image Description, give /getimage</p>
+        <p>To get the zipfiles, give /getzip </p>
     `;
-
+    
     res.status(200).send(responseText);
 }
 
@@ -92,10 +96,51 @@ const getexcel = (req,res) =>{
 }
 
 
+const getImgdescrption = (req,res) =>{
+
+    try {
+        const dimensions = sizeOf('testimage.png');
+        res.status(200).send(dimensions)
+        console.log("Image descriptions sent successfully");
+      } catch (error) {
+        console.error('Error:', error);
+        res.status(500).send("Error reading the image");
+      }
+
+}
+
+
+const getzip = (req,res) =>{
+const AdmZip = require('adm-zip');
+const zipFilePath = 'test.zip';
+
+try {
+    const zip = new AdmZip(zipFilePath);
+    const zipEntries = zip.getEntries();
+
+    const fileNames = zipEntries
+      .filter((entry) => !entry.isDirectory)
+      .map((entry) => entry.entryName);
+
+    if (fileNames.length > 0) {
+      res.status(200).json({ files: fileNames });
+    } else {
+      res.status(200).send('No files found in the zip.');
+    }
+    }
+    catch (error){
+    console.error('Error:', error);
+    res.status(500).send('Error reading zip file.');
+    }
+}
+
+
 module.exports = {
     getcsv,
     getword,
     getexcel,
     getpdf,
-    getintialdata
+    getintialdata,
+    getImgdescrption,
+    getzip
 }
