@@ -1,9 +1,109 @@
-.container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; 
-    align-items: center; 
-    animation: fadeIn 2s ease-in-out;
+.head-box{
+  background-color: black;
+  height: 100vh;
+  width: 100vw;
+  animation: fadeIn 3s;
+}
+
+.homepage-head{
+  position: relative;
+  margin-left: 570px;
+  margin-top : 350px;
+  font-family: 'Tilt Prism', sans-serif;
+  font-size: 60px;
+  color: white;
+  letter-spacing: 1px;
+}
+
+.head-subtitle{
+  font-family: 'Pacifico', cursive;
+  font-size: large;
+  margin-left: 585px;
+  margin-top: 20px;
+  color: rgb(255, 255, 255);
+  letter-spacing: 2px;
+}
+
+.pdf-icon1 {
+  position: absolute;
+  top: 150px;
+  left: 600px;
+  font-size: 44px;
+  color: rgb(255, 42, 42);
+  animation: movevertical 4s linear infinite;
+  animation-delay: 1s;
+}
+
+.pdf-icon {
+  position: absolute;
+  top: 180px;
+  left: 700px;
+  font-size: 42px;
+  color: rgb(247, 255, 88);
+  animation: movevertical 4s linear infinite;
+  animation-delay:0.5s;
+  
+}
+
+.pdf-icon2 {
+  position: absolute;
+  top: 130px;
+  left: 800px;
+  font-size: 43px;
+  color: rgb(142, 86, 255);
+  animation: movevertical 4s linear infinite;
+}
+
+.pdf-icon3 {
+  position: absolute;
+  top: 150px;
+  left: 900px;
+  font-size: 49px;
+  color: rgb(97, 188, 41);
+  animation: movevertical 4s linear infinite;
+  animation-delay: 1.5s;
+}
+
+.left-wing{
+  position: absolute;
+  top: 150px;
+  left: 220px;
+  font-size: 150px;
+  color: rgb(48, 3, 245)
+}
+.left-wing1{
+  position: absolute;
+  top: 450px;
+  left: 150px;
+  font-size: 150px;
+  color: rgb(215, 206, 30)
+}
+
+.right-wing{
+  position: absolute;
+  top: 150px;
+  left: 1200px;
+  font-size: 150px;
+  color: rgb(213, 38, 38)
+}
+.right-wing1{
+  position: absolute;
+  top: 450px;
+  left: 1300px;
+  font-size: 150px;
+  color: rgb(10, 143, 25)
+}
+
+/* Define the keyframes for the animation */
+@keyframes movevertical {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(170px); /* Adjust the distance as needed */
+    opacity: 0;
+  }
 }
 
 @keyframes fadeIn {
@@ -12,5 +112,34 @@
     }
     to {
       opacity: 1;
+    }
+  }
+
+
+  @media (max-width: 768px) {
+    .head-box {
+      height: auto; 
+    }
+  
+    .homepage-head {
+      margin-left: 20px;
+      margin-top: 20px;
+      font-size: 36px; 
+    }
+  
+    .head-subtitle {
+      margin-left: 20px;
+      font-size: 16px; 
+    }
+  
+    .pdf-icon1,
+    .pdf-icon,
+    .pdf-icon2,
+    .pdf-icon3,
+    .left-wing,
+    .left-wing1,
+    .right-wing,
+    .right-wing1 {
+      display: none; 
     }
   }
