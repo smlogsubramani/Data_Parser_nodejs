@@ -94,6 +94,38 @@
   color: rgb(10, 143, 25)
 }
 
+.service-head{
+  font-size: 40px;
+  font-family: 'Tilt Prism', sans-serif;
+  padding: 10px;
+  text-align: center;
+  color: black;
+  font-weight: 800;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#service-cont{
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+}
+
+
+.pdf-icon-service{
+  font-size: 60px;
+  color: rgb(0, 0, 0);
+
+}
+
+.icon-top-space{
+  margin-top: 50px;
+  text-align: center;
+  font-family: 'Pacifico', cursive;
+}
+
+
 /* Define the keyframes for the animation */
 @keyframes movevertical {
   0% {

@@ -35,7 +35,32 @@ const Homepage = () => {
         </div>
 
         <div className="container">
-
+            <h2 className='service-head'>
+              Services
+            </h2>
+            <div id='service-cont' className="row">
+              <div className="col">
+              <FontAwesomeIcon  icon={faFilePdf} className="pdf-icon-service" />
+              <p className='icon-top-space'>Extract PDF data</p>
+              </div>
+              <div className="col">
+              <FontAwesomeIcon  icon={faFilePdf} className="pdf-icon-service" />
+              <p className='icon-top-space'>Extract WORD data</p>
+              </div>
+              <div className="col">
+              <FontAwesomeIcon  icon={faFilePdf} className="pdf-icon-service" />
+              <p className='icon-top-space'>Extract EXCEL data</p>
+              </div>
+              <div className="col">
+              <FontAwesomeIcon  icon={faFilePdf} className="pdf-icon-service" />
+              <p className='icon-top-space'>Extract IMAGE data</p>
+              </div>
+              <div className="col">
+              <FontAwesomeIcon  icon={faFilePdf} className="pdf-icon-service" />
+              <p className='icon-top-space'>Extract CSV data</p>
+              
+              </div>
+            </div>
         </div>
     </div>
   )
