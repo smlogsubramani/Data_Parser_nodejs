@@ -152,7 +152,88 @@ const Homepage = () => {
 
         </div>
     </div>
-</section>
+        </section>
+        
+        {/* TIMELINE */}
+        <div class="container">                      
+        <div class="row text-center justify-content-center mb-5">
+        <div class="col-xl-6 col-lg-8">
+            <h2 class="font-weight-bold">Data Emersion</h2>
+            <p class="text-muted">These process is common for all the types of file and document extraction.</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="timeline-steps aos-init aos-animate" data-aos="fade-up">
+                <div class="timeline-step">
+                    <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2003">
+                        <div class="inner-circle"></div>
+                        <p class="h6 mt-3 mb-1">1</p>
+                        <p class="h6 text-muted mb-0 mb-lg-0">Click Service</p>
+                    </div>
+                </div>
+                <div class="timeline-step">
+                    <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2004">
+                        <div class="inner-circle"></div>
+                        <p class="h6 mt-3 mb-1">2</p>
+                        <p class="h6 text-muted mb-0 mb-lg-0">Import Files</p>
+                    </div>
+                </div>
+                <div class="timeline-step">
+                    <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2005">
+                        <div class="inner-circle"></div>
+                        <p class="h6 mt-3 mb-1">3</p>
+                        <p class="h6 text-muted mb-0 mb-lg-0">File Upload Complete</p>
+                    </div>
+                </div>
+                <div class="timeline-step">
+                    <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2010">
+                        <div class="inner-circle"></div>
+                        <p class="h6 mt-3 mb-1">4</p>
+                        <p class="h6 text-muted mb-0 mb-lg-0">Data Extraction</p>
+                    </div>
+                </div>
+                <div class="timeline-step mb-0">
+                    <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2020">
+                        <div class="inner-circle"></div>
+                        <p class="h6 mt-3 mb-1">5</p>
+                        <p class="h6 text-muted mb-0 mb-lg-0">Data Displayed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+
+        {/* FOOTER  */}
+        <div class="footer">
+	    <div class="container">		
+		<div class="row text-center">						
+			<div class="col-lg-11 col-sm-11 col-xs-11">
+				<div class="footer_menu">
+					<ul>
+						<li><a href="#">Home</a></li>
+						<li><a href="#">Service</a></li>
+                        <li><a href="#">About</a></li>
+						<li><a href="#">Contact</a></li>
+					</ul>
+				</div>						
+				<div class="footer_copyright">
+					<p>© 2023 Loga. All Rights Reserved.</p>
+				</div>	
+				<div class="footer_profile">
+					<ul>
+						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="#"><i class="fa fa-instagram"></i></a></li>
+						<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+					</ul>
+				    </div>						
+			        </div>						
+		        </div>				
+	        </div>
+        </div>
     </div>
   )
 }
