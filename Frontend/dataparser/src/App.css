@@ -96,7 +96,8 @@
 
 .feature-box-1 {
   padding: 32px;
-  box-shadow: 0 0 30px rgba(31, 45, 61, 0.125);
+  border: 1px solid rgb(46, 46, 46);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.125);
   margin: 15px 0;
   position: relative;
   z-index: 1;
@@ -118,8 +119,8 @@
   width: 70px;
   height: 70px;
   line-height: 70px;
-  background: #121212;
-  color: #ffffff;
+  background: #ffffff;
+  color: #000000;
   text-align: center;
   border-radius: 50%;
   margin-bottom: 22px;
@@ -129,12 +130,13 @@
   line-height: 70px;
 }
 .feature-box-1 h5 {
-  color: #000000;
+  color: #ffffff;
   font-weight: 600;
   font-family: 'Pacifico', cursive;
 }
 .feature-box-1 p {
   margin: 0;
+  color: rgb(110, 110, 110);
 }
 .feature-box-1:after {
   content: "";
@@ -177,7 +179,7 @@
 }
 .section-title h2 {
     font-weight: 700;
-    color: #000000;
+    color: #ffffff;
     font-size: 50px;
     margin: 0 0 15px;
     border-left: 5px solid #5c5c5c;
@@ -273,6 +275,7 @@ color: #fff;
 .font-weight-bold{
   font-family: 'Tilt Prism', sans-serif;
   font-weight: 800;
+  font-size: 50px;
 }
 
 .text-muted{
@@ -294,11 +297,151 @@ color: #fff;
   margin: 1rem
 }
 
+.section {
+  padding: 100px 0;
+  position: relative;
+}
+
+.gray-bg {
+  background-color: #000000;
+}
+
+.contact-name {
+margin-bottom: 30px;
+}
+.contact-name h5 {
+font-size: 22px;
+color: #ffffff;
+margin-bottom: 5px;
+font-weight: 600;
+}
+.contact-name p {
+font-size: 18px;
+margin: 0;
+color: white;
+}
+
+.social-share a {
+width: 40px;
+height: 40px;
+line-height: 40px;
+border-radius: 50%;
+color: #ffffff;
+text-align: center;
+margin-right: 10px;
+}
+.social-share .dribbble {
+box-shadow: 0 8px 30px -4px rgba(234, 76, 137, 0.5);
+background-color: #ea4c89;
+}
+.social-share .behance {
+box-shadow: 0 8px 30px -4px rgba(255, 255, 255, 0.5);
+background-color: #ffffff;
+}
+.social-share .linkedin {
+box-shadow: 0 8px 30px -4px rgba(255, 255, 255, 0.5);
+background-color: #2732a6;
+}
+
+.contact-form .form-control {
+border: none;
+border-bottom: 1px solid #ffffff;
+background: transparent;
+border-radius: 0;
+padding-left: 0;
+box-shadow: none !important;
+}
+.contact-form .form-control:focus {
+border-bottom: 1px solid #fc5356;
+}
+.contact-form .form-control.invalid {
+border-bottom: 1px solid #ff0000;
+}
+.contact-form .send {
+margin-top: 20px;
+}
+@media (max-width: 767px) {
+.contact-form .send {
+  margin-bottom: 20px;
+}
+}
+
+.section-title h2 {
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 45px;
+  margin: 0 0 15px;
+  border-left: 5px solid #fc5356;
+  padding-left: 15px;
+}
+.section-title p{
+  color: white;
+}
+.section-title {
+  padding-bottom: 45px;
+}
+.contact-form .send {
+  margin-top: 20px;
+}
+.px-btn {
+  padding: 0 50px 0 20px;
+  line-height: 60px;
+  position: relative;
+  display: inline-block;
+  color: #ffffff;
+  background: none;
+  border: none;
+}
+.px-btn:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  border-radius: 30px;
+  background: transparent;
+  border: 1px solid rgba(252, 83, 86, 0.6);
+  border-right: 1px solid transparent;
+  -moz-transition: ease all 0.35s;
+  -o-transition: ease all 0.35s;
+  -webkit-transition: ease all 0.35s;
+  transition: ease all 0.35s;
+  width: 60px;
+  height: 60px;
+}
+.px-btn .arrow {
+  width: 13px;
+  height: 2px;
+  background: currentColor;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  right: 25px;
+}
+.px-btn .arrow:after {
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid currentColor;
+  border-top: 2px solid currentColor;
+  content: "";
+  position: absolute;
+  top: -3px;
+  right: 0;
+  display: inline-block;
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+} 
+
 @media (min-width:768px) {
   .timeline-steps .timeline-step:not(:last-child):after {
       content: "";
       display: block;
-      border-top: .25rem dotted #3b82f6;
+      border-top: .25rem dotted #000000;
       width: 3.46rem;
       position: absolute;
       left: 7.5rem;
@@ -307,7 +450,7 @@ color: #fff;
   .timeline-steps .timeline-step:not(:first-child):before {
       content: "";
       display: block;
-      border-top: .25rem dotted #3b82f6;
+      border-top: .25rem dotted #000000;
       width: 3.8125rem;
       position: absolute;
       right: 7.5rem;
@@ -327,18 +470,44 @@ color: #fff;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: #3b82f6
+  background-color: #000000
 }
 
 .timeline-steps .timeline-content .inner-circle:before {
   content: "";
-  background-color: #3b82f6;
+  background-color: #feffff;
+  border: 3px solid black;
   display: inline-block;
   height: 3rem;
   width: 3rem;
   min-width: 3rem;
   border-radius: 6.25rem;
   opacity: .5
+}
+
+.text-muted{
+  font-family: 'Pacifico', cursive;
+  font-weight: 600;
+}
+
+.contact-name h5{
+  font-family: 'Pacifico', cursive;
+  font-weight: 600;
+}
+
+.contact-name p{
+  font-family: 'Kanit', sans-serif;
+  font-weight: 300;
+}
+
+
+.spacer{
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.services-section{
+  background-color: black;
 }
 
 /* Define the keyframes for the animation */

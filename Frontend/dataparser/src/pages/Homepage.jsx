@@ -155,13 +155,21 @@ const Homepage = () => {
         </section>
         
         {/* TIMELINE */}
-        <div class="container">                      
-        <div class="row text-center justify-content-center mb-5">
+        <div class="container"> 
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="section-title">
+                    <h2>Process</h2>
+                    <p>These process is common for all the types of file extraction.</p>
+                </div>
+            </div>
+        </div>                     
+        {/* <div class="row text-center justify-content-center mb-5">
         <div class="col-xl-6 col-lg-8">
-            <h2 class="font-weight-bold">Data Emersion</h2>
+            <h2 class="font-weight-bold">Process</h2>
             <p class="text-muted">These process is common for all the types of file and document extraction.</p>
         </div>
-    </div>
+    </div> */}
 
     <div class="row">
         <div class="col">
@@ -205,6 +213,80 @@ const Homepage = () => {
         </div>
     </div>
         </div>
+
+        <div className="spacer">
+
+        </div>
+
+        {/* CONTACT  */}
+        <section class="section gray-bg" id="contactus">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="section-title">
+                    <h2>Get In Touch</h2>
+                    <p>I do extraction of the data for the clients of different file formates</p>
+                </div>
+            </div>
+        </div>
+        <div class="row flex-row-reverse">
+            <div class="col-md-7 col-lg-8 m-15px-tb">
+                <div class="contact-form">
+                     <form action="/" method="post" class="contactform contact_form" id="contact_form">
+                        <div class="returnmessage valid-feedback p-15px-b" data-success="Your message has been received, We will contact you soon."></div>
+                        <div class="empty_notice invalid-feedback p-15px-b"><span>Please Fill Required Fields</span></div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input id="name" type="text" placeholder="Full Name" class="form-control"/> 
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input id="email" type="text" placeholder="Email Address" class="form-control"/>  
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <input id="subject" type="text" placeholder="Subject" class="form-control"/> 
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <textarea id="message" placeholder="Message" class="form-control" rows="3"></textarea> 
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="send">
+                                    <a id="send_message" class="px-btn theme" href="#"><span>Contact Us</span> <i class="arrow"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-5 col-lg-4 m-15px-tb">
+                <div class="contact-name">
+                    <h5>Mail</h5>
+                    <p>smlogasubramani@gmail.com</p>
+                </div>
+                <div class="contact-name">
+                    <h5>Visit My Office</h5>
+                    <p>Loga technologies,<br/>Porur chennai 116</p>
+                </div>
+                <div class="contact-name">
+                    <h5>Phone</h5>
+                    <p>+91 9790778113</p>
+                </div>
+                <div class="social-share nav">
+                    <a class="linkedin" href="#">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+        </section>
 
         {/* FOOTER  */}
         <div class="footer">
