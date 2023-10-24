@@ -1,5 +1,6 @@
 import React from 'react'
 import '../App.css';
+import Footer from '../components/Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFilePdf } from '@fortawesome/free-regular-svg-icons';
 import { faFile } from '@fortawesome/free-regular-svg-icons';
@@ -15,7 +16,6 @@ const Homepage = () => {
     <div>
 
         <div className="head-box">
-        
         <FontAwesomeIcon  icon={faFilePdf} className="left-wing animated-icon" />
         <FontAwesomeIcon  icon={faFileImage} className="left-wing1 animated-icon" />
         <FontAwesomeIcon  icon={faFileWord} className="right-wing animated-icon" />
@@ -34,44 +34,10 @@ const Homepage = () => {
             </h2>
             <p className='head-subtitle'>Fetch your data from your files Instantly.</p>
           </div>
+
         </div>
 
-        <div className="container">
-            {/* <h2 className='service-head'>
-              Services
-            </h2>
-            <div id='service-cont' className="row">
-              <div className="col">
-              <FontAwesomeIcon  icon={faFilePdf} className="pdf-icon-service" />
-              <p className='icon-top-space'>Extract PDF data</p>
-              </div>
-              <div className="col">
-              <FontAwesomeIcon  icon={faFilePdf} className="pdf-icon-service" />
-              <p className='icon-top-space'>Extract WORD data</p>
-              </div>
-              <div className="col">
-              <FontAwesomeIcon  icon={faFilePdf} className="pdf-icon-service" />
-              <p className='icon-top-space'>Extract EXCEL data</p>
-              </div>
-            </div>
-            <div className="icons-spacing"></div>
-            <div id='service-cont' className="row">
-              <div className="col">
-              <FontAwesomeIcon  icon={faFilePdf} className="pdf-icon-service" />
-              <p className='icon-top-space'>Extract IMAGE data</p>
-              </div>
-              <div className="col">
-              <FontAwesomeIcon  icon={faFilePdf} className="pdf-icon-service" />
-              <p className='icon-top-space'>Extract CSV data</p>                       
-              </div>
-              <div className="col">
-              <FontAwesomeIcon  icon={faFilePdf} className="pdf-icon-service" />
-              <p className='icon-top-space'>Extract Zip data</p>
-              </div>
-
-              </div> */}
-              
-        </div>
+        {/* SERVICES */}
         <section class="section services-section" id="services">
     <div class="container">
         <div class="row">
@@ -155,7 +121,7 @@ const Homepage = () => {
         </section>
         
         {/* TIMELINE */}
-        <div class="container"> 
+        {/* <div class="container"> 
         <div class="row">
             <div class="col-lg-6">
                 <div class="section-title">
@@ -163,14 +129,7 @@ const Homepage = () => {
                     <p>These process is common for all the types of file extraction.</p>
                 </div>
             </div>
-        </div>                     
-        {/* <div class="row text-center justify-content-center mb-5">
-        <div class="col-xl-6 col-lg-8">
-            <h2 class="font-weight-bold">Process</h2>
-            <p class="text-muted">These process is common for all the types of file and document extraction.</p>
-        </div>
-    </div> */}
-
+        </div>                    
     <div class="row">
         <div class="col">
             <div class="timeline-steps aos-init aos-animate" data-aos="fade-up">
@@ -212,12 +171,7 @@ const Homepage = () => {
             </div>
         </div>
     </div>
-        </div>
-
-        <div className="spacer">
-
-        </div>
-
+        </div> */}
         {/* CONTACT  */}
         <section class="section gray-bg" id="contactus">
     <div class="container">
@@ -225,7 +179,7 @@ const Homepage = () => {
             <div class="col-lg-6">
                 <div class="section-title">
                     <h2>Get In Touch</h2>
-                    <p>I do extraction of the data for the clients of different file formates</p>
+                    <p>Any Queries get info here!</p>
                 </div>
             </div>
         </div>
@@ -289,33 +243,7 @@ const Homepage = () => {
         </section>
 
         {/* FOOTER  */}
-        <div class="footer">
-	    <div class="container">		
-		<div class="row text-center">						
-			<div class="col-lg-11 col-sm-11 col-xs-11">
-				<div class="footer_menu">
-					<ul>
-						<li><a href="#">Home</a></li>
-						<li><a href="#">Service</a></li>
-                        <li><a href="#">About</a></li>
-						<li><a href="#">Contact</a></li>
-					</ul>
-				</div>						
-				<div class="footer_copyright">
-					<p>© 2023 Loga. All Rights Reserved.</p>
-				</div>	
-				<div class="footer_profile">
-					<ul>
-						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-						<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-						<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-					</ul>
-				    </div>						
-			        </div>						
-		        </div>				
-	        </div>
-        </div>
+        <Footer/>
     </div>
   )
 }

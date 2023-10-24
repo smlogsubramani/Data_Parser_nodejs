@@ -1,7 +1,7 @@
 .head-box{
   background-color: black;
   height: 100vh;
-  width: 100vw;
+  width: 98.7vw;
   animation: fadeIn 3s;
 }
 
@@ -304,6 +304,7 @@ color: #fff;
 
 .gray-bg {
   background-color: #000000;
+
 }
 
 .contact-name {
@@ -559,5 +560,62 @@ margin-top: 20px;
     .right-wing,
     .right-wing1 {
       display: none; 
+    }
+  }
+
+
+
+  /* OTHER PAGES */
+
+  .blackbg{
+    background-color: #000000;
+    height: 100vh;
+    width: 98.7vw;
+
+  }
+  .service-head{
+    font-weight: 600;
+    text-align: center;
+    font-family: 'Tilt Prism', sans-serif;
+    color: white;
+    position: absolute;
+    left: 33%;
+    top : 30%;
+  }
+
+  .service-btn{
+    width: 400px;
+    padding: 20px;
+    color: white;
+    background-color: black;
+    border: 1px solid white;
+    font-size: 30px;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.125);
+    font-weight: 500;
+    font-family: 'Kanit', sans-serif;
+    position: absolute;
+    top: 40%;
+    left: 35.5%;
+    text-transform: capitalize;
+    border-radius: 10px;
+
+  }
+  .service-btn:hover{
+    background-color:#060d61 ;
+    color: white;
+    cursor: pointer;
+  }
+
+  @media (max-width: 768px){
+    .service-head{
+      font-size: 20px;
+      position: absolute;
+      left: 7%;
+    }
+    .service-btn{
+      width: 200px;
+      font-size: 10px;
+      position: absolute;
+      left: 19%;
     }
   }

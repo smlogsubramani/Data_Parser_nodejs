@@ -2,6 +2,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import HomePage from "../pages/Homepage";
 import Getpdf from "../pages/GetPdf";
+import GetImage from "../pages/GetImage";
 
 
 const router = createBrowserRouter([
@@ -12,6 +13,10 @@ const router = createBrowserRouter([
     {
         path: "/getpdf",
         element: <Getpdf/>
+    },
+    {
+        path: "/getimage",
+        element: <GetImage/>
     }
 ]);
 
