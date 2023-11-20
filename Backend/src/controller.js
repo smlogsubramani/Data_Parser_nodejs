@@ -135,6 +135,12 @@ try {
 }
 
 
+const feedback = (req,res)=>{
+    const{email,body} = req.body;
+    console.log("Feedback received",{email,body});
+    res.status(201).json({email, body});
+}
+
 module.exports = {
     getcsv,
     getword,
@@ -142,5 +148,6 @@ module.exports = {
     getpdf,
     getintialdata,
     getImgdescrption,
-    getzip
+    getzip,
+    feedback
 }

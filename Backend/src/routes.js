@@ -9,4 +9,5 @@ router.get('/getexcel',controller.getexcel);
 router.get('/getpdf',controller.getpdf);
 router.get('/getimage',controller.getImgdescrption);
 router.get('/getzip',controller.getzip);
+router.post('/feedback', controller.feedback);
 module.exports = router;
