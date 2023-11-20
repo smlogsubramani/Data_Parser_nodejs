@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react';
 import '../App.css';
 import Footer from '../components/Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -11,7 +11,31 @@ import { faFileZipper } from '@fortawesome/free-regular-svg-icons';
 
 
 const Homepage = () => {
-
+    const [email, setEmail] = useState('');
+    const [body, setBody] = useState('');
+  
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+  
+      try {
+        const response = await fetch('http://localhost:3000/feedback', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ email, body }),
+        });
+  
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+  
+        const data = await response.json();
+        console.log(data); // Feedback received successfully
+      } catch (error) {
+        console.error('Error submitting feedback:', error);
+      }
+    }
   return (
     <div>
 
@@ -120,58 +144,6 @@ const Homepage = () => {
     </div>
         </section>
         
-        {/* TIMELINE */}
-        {/* <div class="container"> 
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="section-title">
-                    <h2>Process</h2>
-                    <p>These process is common for all the types of file extraction.</p>
-                </div>
-            </div>
-        </div>                    
-    <div class="row">
-        <div class="col">
-            <div class="timeline-steps aos-init aos-animate" data-aos="fade-up">
-                <div class="timeline-step">
-                    <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2003">
-                        <div class="inner-circle"></div>
-                        <p class="h6 mt-3 mb-1">1</p>
-                        <p class="h6 text-muted mb-0 mb-lg-0">Click Service</p>
-                    </div>
-                </div>
-                <div class="timeline-step">
-                    <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2004">
-                        <div class="inner-circle"></div>
-                        <p class="h6 mt-3 mb-1">2</p>
-                        <p class="h6 text-muted mb-0 mb-lg-0">Import Files</p>
-                    </div>
-                </div>
-                <div class="timeline-step">
-                    <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2005">
-                        <div class="inner-circle"></div>
-                        <p class="h6 mt-3 mb-1">3</p>
-                        <p class="h6 text-muted mb-0 mb-lg-0">File Upload Complete</p>
-                    </div>
-                </div>
-                <div class="timeline-step">
-                    <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2010">
-                        <div class="inner-circle"></div>
-                        <p class="h6 mt-3 mb-1">4</p>
-                        <p class="h6 text-muted mb-0 mb-lg-0">Data Extraction</p>
-                    </div>
-                </div>
-                <div class="timeline-step mb-0">
-                    <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2020">
-                        <div class="inner-circle"></div>
-                        <p class="h6 mt-3 mb-1">5</p>
-                        <p class="h6 text-muted mb-0 mb-lg-0">Data Displayed</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-        </div> */}
         {/* CONTACT  */}
         <section class="section gray-bg" id="contactus">
     <div class="container">
@@ -186,30 +158,36 @@ const Homepage = () => {
         <div class="row flex-row-reverse">
             <div class="col-md-7 col-lg-8 m-15px-tb">
                 <div class="contact-form">
-                     <form action="/" method="post" class="contactform contact_form" id="contact_form">
+                     <form action="/" method="post" class="contactform contact_form" id="contact_form" onSubmit={handleSubmit}>
                         <div class="returnmessage valid-feedback p-15px-b" data-success="Your message has been received, We will contact you soon."></div>
                         <div class="empty_notice invalid-feedback p-15px-b"><span>Please Fill Required Fields</span></div>
                         <div class="row">
-                            <div class="col-md-6">
+                            {/* <div class="col-md-6">
                                 <div class="form-group">
                                     <input id="name" type="text" placeholder="Full Name" class="form-control"/> 
                                 </div>
-                            </div>
+                            </div> */}
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input id="email" type="text" placeholder="Email Address" class="form-control"/>  
+                                    <input id="email" type="email" placeholder="Email Address" class="form-control" value={email} onChange={(e) => setEmail(e.target.value)}/>  
                                 </div>
                             </div>
-                            <div class="col-12">
+                            {/* <div class="col-12">
                                 <div class="form-group">
                                     <input id="subject" type="text" placeholder="Subject" class="form-control"/> 
+                                </div>
+                            </div> */}
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <textarea id="message" placeholder="Message" class="form-control" rows="3" value={body} onChange={(e) => setBody(e.target.value)} /> 
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <textarea id="message" placeholder="Message" class="form-control" rows="3"></textarea> 
+                                    <button type='submit'>submit</button>
                                 </div>
                             </div>
+
                             <div class="col-md-12">
                                 <div class="send">
                                     <a id="send_message" class="px-btn theme" href="#"><span>Contact Us</span> <i class="arrow"></i></a>
