@@ -1,39 +1,50 @@
-import { useRef } from "react";
-import React from 'react';
-import Footer from "../components/Footer";
+import React, { useState, useEffect } from 'react';
 
-export const Getcsv = () => {
-    const fileInputRef = useRef(null);
+const Getcsv = () => {
+  const [csvData, setCsvData] = useState([]);
 
-    const handleClick = () => {
-      fileInputRef.current.click();
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('http://localhost:3000/getcsv');
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        setCsvData(data);
+      } catch (error) {
+        console.error('Error fetching CSV:', error);
+      }
     };
-  
-    return (
-      <div>
-        <input
-          type="file"
-          ref={fileInputRef}
-          style={{ display: 'none' }}
-          accept=".csv"
-          onChange={(e) => {
-            const selectedFile = e.target.files[0];
-            if (selectedFile) {
-              console.log('Selected file:', selectedFile);
-            }
-          }}
-        />
-        <section className='blackbg'>
-          <div className="row">
-            <h2 className='service-head'>Upload the CSV documents here!</h2>
-          </div>
-          <div className="container">
-            <button onClick={handleClick} className='service-btn'>Click here</button>
-          </div>
-        </section>
-        <Footer/>
-      </div>
-    );
-}
+
+    fetchData();
+  }, []); 
+
+  return (
+<div>
+      <h1>CSV Data</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Email</th>
+            <th>Phone</th>
+          </tr>
+        </thead>
+        <tbody>
+          {csvData.map((row, index) => (
+            <tr key={index}>
+              <td>{row.Name}</td>
+              <td>{row.Age}</td>
+              <td>{row.Email}</td>
+              <td>{row.Phone}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+};
 
 export default Getcsv;
